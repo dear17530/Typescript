@@ -31,8 +31,6 @@ let person1: Person = {
 
 // person1.id = 2 // 因為有 readonly 所以會報錯
 person1.age = 13
-// ---------------object---------------
-
 
 // ---------------array----------------
 // 不常用, 理解就好
@@ -41,7 +39,6 @@ interface array1 {
 }
 let arr5: array1 = [1, 2, 3]
 // let arr5: array1 = [1, 2, 3, ''] // 報錯
-// ---------------array----------------
 
 
 
@@ -55,5 +52,28 @@ const fun3: SearchFunc = (a: string, b: string): boolean => {
   return a.search(b) !== -1
 }
 
-fun3('123', '1' )
-// --------------function--------------
+fun3('123', '1')
+
+// --------------implements--------------
+// interface 繼承 interface
+// class 實現 interface
+// 可以利用 extends 將 interface 集合起來 implements class
+interface run {
+  run: () => void
+}
+
+interface swim {
+  swim: () => void
+}
+
+// extends 繼承
+interface All extends run, swim {
+  jump: () => void
+}
+
+// implements 實現
+class I implements All {
+  run() { }
+  swim() { }
+  jump() { }
+}

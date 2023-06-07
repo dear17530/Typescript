@@ -273,4 +273,4 @@ let person: IPerson = {
   sayHi() {
     console.log('hi');
   },
-} 
+}

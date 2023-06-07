@@ -77,3 +77,16 @@ class I implements All {
   swim() { }
   jump() { }
 }
+
+// --------------聲明合併--------------
+// 若不小心宣告到一樣的 interface 會合併, 若類型不同時依前者為主
+interface Cat {
+  name: string
+}
+
+interface Cat {
+  name: string,
+  age: number
+}
+
+const cat: Cat = { name: '小菊', age: 18 }
